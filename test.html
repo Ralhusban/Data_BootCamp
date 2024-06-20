@@ -1,0 +1,73 @@
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<crowd-form>
+    <div>
+        <h3>Evidence Status</h3>
+        <crowd-dropdown name="evidenceStatus" id="evidenceStatus">
+            <option value="correct">Correct</option>
+            <option value="wrong">Wrong</option>
+        </crowd-dropdown>
+    </div>
+
+    <div>
+        <h3>Evidence Updated</h3>
+        <crowd-input name="evidenceUpdated" id="evidenceUpdated" disabled placeholder="No"></crowd-input>
+    </div>
+
+    <div>
+        <h3>Reasoning Status</h3>
+        <crowd-dropdown name="reasoningStatus" id="reasoningStatus">
+            <option value="correct">Correct</option>
+            <option value="wrong">Wrong</option>
+        </crowd-dropdown>
+    </div>
+
+    <div>
+        <h3>Reasoning Updated</h3>
+        <crowd-input name="reasoningUpdated" id="reasoningUpdated" disabled placeholder="No"></crowd-input>
+    </div>
+
+    <div>
+        <h3>Perfect Score Status</h3>
+        <crowd-dropdown name="perfectScoreStatus" id="perfectScoreStatus">
+            <option value="correct">Correct</option>
+            <option value="wrong">Wrong</option>
+        </crowd-dropdown>
+    </div>
+
+    <div>
+        <h3>Perfect Score Updated</h3>
+        <crowd-input name="perfectScoreUpdated" id="perfectScoreUpdated" disabled placeholder="No"></crowd-input>
+    </div>
+
+    <div>
+        <h3>Score Status</h3>
+        <crowd-dropdown name="scoreStatus" id="scoreStatus">
+            <option value="correct">Correct</option>
+            <option value="wrong">Wrong</option>
+        </crowd-dropdown>
+    </div>
+
+    <div>
+        <h3>Score Updated</h3>
+        <crowd-input name="scoreUpdated" id="scoreUpdated" disabled placeholder="No"></crowd-input>
+    </div>
+</crowd-form>
+
+<script>
+    document.getElementById('evidenceStatus').addEventListener('change', function() {
+        var evidenceUpdatedField = document.getElementById('evidenceUpdated');
+        if (this.value === 'correct') {
+            evidenceUpdatedField.disabled = true;
+            evidenceUpdatedField.placeholder = 'No';
+            evidenceUpdatedField.value = '';
+        } else {
+            evidenceUpdatedField.disabled = false;
+            evidenceUpdatedField.placeholder = 'Updated snippets...';
+        }
+    });
+
+    // Similar logic can be added for the other dropdowns and fields
+    // ...
+
+</script>
